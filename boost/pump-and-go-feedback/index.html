@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#D24322">
+<meta name="description" content="Quick anonymous satisfaction check for the Pump & Go bike station at Breda University of Applied Sciences.">
+<title>Pump &amp; Go Pit Stop Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Archivo+Black&display=swap">
+</head>
+<body>
+<style>
+  :root{
+    --orange:#D24322;
+    --orange-deep:#A6331A;
+    --orange-line:#E9784F;
+    --cream:#F4E8D6;
+    --cream-2:#EAD9BF;
+    --ink:#2A140D;
+    --sad:#C1302433;      /* unused token slot kept legible */
+    --c-sad:#C43127;
+    --c-neutral:#E4922C;
+    --c-happy:#3C8B4C;
+    --focus:#2A140D;
+    --maxw:960px;
+    --display:"Archivo Black","Arial Black","Helvetica Neue",Impact,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html,body{height:100%}
+  body{
+    background:var(--orange);
+    color:var(--cream);
+    font-family:"Archivo","Segoe UI",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    min-height:100%;
+    overflow-x:hidden;
+  }
+
+  .wrap{
+    flex:1;
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:clamp(20px,4vw,44px) clamp(18px,5vw,40px) 28px;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ---------- eyebrow ---------- */
+  .eyebrow{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    font-weight:700;
+    font-size:clamp(11px,1.5vw,14px);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--cream);
+    flex-wrap:wrap;
+  }
+  .eyebrow span{white-space:nowrap}
+
+  /* ---------- screens ---------- */
+  .screen{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px 0}
+  .screen[hidden]{display:none}
+
+  /* ---------- question ---------- */
+  .frame{
+    border:2px solid var(--cream);
+    padding:clamp(22px,4.5vw,40px) clamp(18px,5vw,52px) clamp(30px,5vw,46px);
+    width:100%;
+    position:relative;
+  }
+  h1.q{
+    font-family:var(--display);
+    font-weight:400;
+    line-height:.94;
+    letter-spacing:-.01em;
+    text-transform:uppercase;
+    font-size:clamp(34px,8vw,74px);
+    text-wrap:balance;
+  }
+  .sub{
+    margin-top:14px;
+    font-weight:600;
+    letter-spacing:.04em;
+    font-size:clamp(13px,2vw,16px);
+    color:var(--orange-line);
+    text-transform:uppercase;
+  }
+
+  /* starburst badge */
+  .burst{
+    position:absolute;
+    top:-30px;
+    right:-18px;
+    width:96px;height:96px;
+    display:grid;place-items:center;
+    transform:rotate(-12deg);
+    filter:drop-shadow(0 4px 0 var(--orange-deep));
+  }
+  .burst svg{position:absolute;inset:0;width:100%;height:100%}
+  .burst span{
+    position:relative;
+    font-family:var(--display);
+    font-size:14px;
+    line-height:1;
+    color:var(--orange);
+    text-transform:uppercase;
+    transform:rotate(4deg);
+  }
+  @media (max-width:560px){ .burst{top:-22px;right:-6px;width:74px;height:74px} .burst span{font-size:11px} }
+
+  /* ---------- faces ---------- */
+  .faces{
+    margin-top:clamp(26px,5vw,44px);
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:clamp(12px,2.5vw,22px);
+    width:100%;
+  }
+  @media (max-width:560px){ .faces{grid-template-columns:1fr;max-width:360px;margin-inline:auto} }
+
+  .face-btn{
+    appearance:none;
+    border:2px solid var(--cream);
+    background:var(--cream);
+    border-radius:18px;
+    padding:clamp(16px,3vw,26px) 12px clamp(12px,2vw,18px);
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+    font-family:inherit;
+    transition:transform .14s ease, background-color .14s ease, box-shadow .14s ease;
+    box-shadow:0 6px 0 var(--orange-deep);
+  }
+  .face-btn svg{width:clamp(66px,13vw,104px);height:auto;display:block}
+  .face-btn .lbl{
+    font-family:var(--display);
+    text-transform:uppercase;
+    font-size:clamp(13px,2vw,17px);
+    letter-spacing:.02em;
+  }
+  .face-btn[data-rating="sad"] .stroke{stroke:var(--c-sad)}
+  .face-btn[data-rating="sad"] .lbl{color:var(--c-sad)}
+  .face-btn[data-rating="neutral"] .stroke{stroke:var(--c-neutral)}
+  .face-btn[data-rating="neutral"] .lbl{color:var(--c-neutral)}
+  .face-btn[data-rating="happy"] .stroke{stroke:var(--c-happy)}
+  .face-btn[data-rating="happy"] .lbl{color:var(--c-happy)}
+
+  .face-btn:hover{transform:translateY(-4px)}
+  .face-btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--orange-deep)}
+
+  .face-btn[data-rating="sad"]:hover{background:var(--c-sad)}
+  .face-btn[data-rating="neutral"]:hover{background:var(--c-neutral)}
+  .face-btn[data-rating="happy"]:hover{background:var(--c-happy)}
+  .face-btn:hover .stroke{stroke:var(--cream)}
+  .face-btn:hover .lbl{color:var(--cream)}
+
+  .face-btn.chosen{background:currentColor}
+  .face-btn.dim{opacity:.28;transform:scale(.92)}
+
+  :where(.face-btn,.linkbtn,.pill):focus-visible{
+    outline:3px solid var(--ink);
+    outline-offset:3px;
+  }
+
+  /* ---------- thanks ---------- */
+  .thanks h2{
+    font-family:var(--display);
+    text-transform:uppercase;
+    font-size:clamp(38px,9vw,84px);
+    line-height:.92;
+    text-wrap:balance;
+  }
+  .thanks p{margin-top:16px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;font-size:clamp(13px,2vw,16px);color:var(--orange-line)}
+  .squiggle{margin:26px auto 0;width:140px;height:34px;display:block}
+  .squiggle path{fill:none;stroke:var(--cream);stroke-width:5;stroke-linecap:round}
+  .again{
+    margin-top:34px;
+    appearance:none;border:2px solid var(--cream);background:transparent;color:var(--cream);
+    font-family:var(--display);text-transform:uppercase;letter-spacing:.03em;
+    font-size:14px;padding:12px 22px;border-radius:999px;cursor:pointer;
+  }
+  .again:hover{background:var(--cream);color:var(--orange)}
+
+  /* ---------- footer ---------- */
+  footer{
+    width:100%;
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:16px clamp(18px,5vw,40px) clamp(18px,4vw,30px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-size:clamp(10px,1.6vw,13px);
+    text-align:center;
+  }
+  footer svg{width:15px;height:15px;flex:none}
+  .admin-dot{
+    position:fixed;left:0;bottom:0;width:44px;height:44px;
+    background:transparent;border:0;cursor:default;z-index:5;
+  }
+
+  /* ---------- results ---------- */
+  .results{
+    position:fixed;inset:0;z-index:20;
+    background:var(--cream);
+    color:var(--ink);
+    padding:clamp(20px,4vw,40px);
+    overflow-y:auto;
+    display:none;
+  }
+  .results.open{display:block}
+  .results-inner{max-width:620px;margin:0 auto}
+  .results h2{
+    font-family:var(--display);text-transform:uppercase;
+    font-size:clamp(24px,5vw,36px);line-height:1;
+  }
+  .results .meta{margin-top:6px;font-weight:600;color:#7a4a37;font-size:13px;letter-spacing:.03em}
+  .fs-status{margin-top:8px;font-weight:600;color:#7a4a37;font-size:12.5px;line-height:1.5}
+
+  .bar-row{display:grid;grid-template-columns:132px 1fr auto;align-items:center;gap:12px;margin-top:18px}
+  .bar-row .name{display:flex;align-items:center;gap:9px;font-family:var(--display);text-transform:uppercase;font-size:13px}
+  .bar-row .name svg{width:26px;height:26px;flex:none}
+  .track{background:var(--cream-2);border-radius:999px;height:22px;overflow:hidden}
+  .fill{height:100%;border-radius:999px;transition:width .5s ease}
+  .fill.sad{background:var(--c-sad)}
+  .fill.neutral{background:var(--c-neutral)}
+  .fill.happy{background:var(--c-happy)}
+  .bar-row .val{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;min-width:64px;text-align:right}
+
+  .total{margin-top:24px;font-family:var(--display);text-transform:uppercase;font-size:16px;border-top:2px solid var(--ink);padding-top:14px}
+
+  .data-label{margin-top:22px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:#7a4a37}
+  textarea.data{
+    width:100%;height:120px;margin-top:8px;resize:vertical;
+    font-family:ui-monospace,"Cascadia Code",Consolas,monospace;font-size:12px;
+    border:2px solid var(--ink);border-radius:10px;padding:10px;background:#fff;color:var(--ink);
+  }
+
+  .row-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .pill{
+    appearance:none;border:2px solid var(--ink);background:transparent;color:var(--ink);
+    font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+    font-size:12px;padding:10px 16px;border-radius:999px;cursor:pointer;
+  }
+  .pill:hover{background:var(--ink);color:var(--cream)}
+  .pill.danger{border-color:var(--c-sad);color:var(--c-sad)}
+  .pill.danger:hover{background:var(--c-sad);color:#fff}
+  .pill.primary{background:var(--orange);border-color:var(--orange);color:var(--cream)}
+  .pill.primary:hover{background:var(--orange-deep);border-color:var(--orange-deep)}
+
+  .hint{margin-top:22px;font-size:12px;color:#7a4a37;line-height:1.6}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+
+<div class="wrap">
+  <div class="eyebrow">
+    <span>Breda</span><span>Bicycle</span><span>CO&#8322; Neutral</span>
+  </div>
+
+  <!-- QUESTION -->
+  <section class="screen" id="screen-q">
+    <div class="frame">
+      <div class="burst" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><polygon id="burstPoly" fill="#F4E8D6"></polygon></svg>
+        <span>Tap<br>one</span>
+      </div>
+      <h1 class="q">How was your<br>pit stop?</h1>
+      <p class="sub">One tap &middot; totally anonymous</p>
+
+      <div class="faces" role="group" aria-label="Rate your visit">
+        <button class="face-btn" data-rating="sad" aria-label="Not great">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="stroke" cx="50" cy="50" r="40" fill="none" stroke-width="6"/>
+            <circle cx="37" cy="42" r="5" fill="currentColor" class="eye"/>
+            <circle cx="63" cy="42" r="5" fill="currentColor" class="eye"/>
+            <path class="stroke" d="M34 70 Q50 56 66 70" fill="none" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span class="lbl">Not great</span>
+        </button>
+        <button class="face-btn" data-rating="neutral" aria-label="Okay">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="stroke" cx="50" cy="50" r="40" fill="none" stroke-width="6"/>
+            <circle cx="37" cy="42" r="5" fill="currentColor"/>
+            <circle cx="63" cy="42" r="5" fill="currentColor"/>
+            <path class="stroke" d="M35 64 L65 64" fill="none" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span class="lbl">Okay</span>
+        </button>
+        <button class="face-btn" data-rating="happy" aria-label="Great">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="stroke" cx="50" cy="50" r="40" fill="none" stroke-width="6"/>
+            <circle cx="37" cy="42" r="5" fill="currentColor"/>
+            <circle cx="63" cy="42" r="5" fill="currentColor"/>
+            <path class="stroke" d="M34 60 Q50 78 66 60" fill="none" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span class="lbl">Great</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKS -->
+  <section class="screen thanks" id="screen-thanks" hidden>
+    <h2 id="thanksHead">Thanks for<br>the feedback!</h2>
+    <p id="thanksSub">Ride safe.</p>
+    <svg class="squiggle" viewBox="0 0 140 34" aria-hidden="true">
+      <path d="M6 20 Q 23 -4 40 20 T 74 20 T 108 20 T 134 16"/>
+    </svg>
+    <button class="again" id="againBtn" type="button">New response</button>
+  </section>
+</div>
+
+<footer id="footer">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.5 8 12 8 12s8-6.5 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+  <span>Breda University of Applied Sciences</span>
+</footer>
+
+<button class="admin-dot" id="adminDot" aria-hidden="true" tabindex="-1" title=""></button>
+
+<!-- RESULTS -->
+<div class="results" id="results" role="dialog" aria-modal="true" aria-label="Feedback results">
+  <div class="results-inner">
+    <h2>Pit stop feedback</h2>
+    <p class="meta" id="resultsMeta">No responses yet</p>
+
+    <div class="bar-row">
+      <div class="name">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#C43127" stroke-width="7"/><circle cx="37" cy="42" r="6" fill="#C43127"/><circle cx="63" cy="42" r="6" fill="#C43127"/><path d="M34 70 Q50 56 66 70" fill="none" stroke="#C43127" stroke-width="7" stroke-linecap="round"/></svg>
+        Not great
+      </div>
+      <div class="track"><div class="fill sad" id="fillSad" style="width:0"></div></div>
+      <div class="val" id="valSad">0</div>
+    </div>
+    <div class="bar-row">
+      <div class="name">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#E4922C" stroke-width="7"/><circle cx="37" cy="42" r="6" fill="#E4922C"/><circle cx="63" cy="42" r="6" fill="#E4922C"/><path d="M35 64 L65 64" fill="none" stroke="#E4922C" stroke-width="7" stroke-linecap="round"/></svg>
+        Okay
+      </div>
+      <div class="track"><div class="fill neutral" id="fillNeutral" style="width:0"></div></div>
+      <div class="val" id="valNeutral">0</div>
+    </div>
+    <div class="bar-row">
+      <div class="name">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="#3C8B4C" stroke-width="7"/><circle cx="37" cy="42" r="6" fill="#3C8B4C"/><circle cx="63" cy="42" r="6" fill="#3C8B4C"/><path d="M34 60 Q50 78 66 60" fill="none" stroke="#3C8B4C" stroke-width="7" stroke-linecap="round"/></svg>
+        Great
+      </div>
+      <div class="track"><div class="fill happy" id="fillHappy" style="width:0"></div></div>
+      <div class="val" id="valHappy">0</div>
+    </div>
+
+    <p class="total" id="totalLine">0 responses</p>
+
+    <p class="data-label">Live spreadsheet file</p>
+    <p class="fs-status" id="fsStatus">Not linked &mdash; responses are kept in this browser only.</p>
+    <div class="row-actions">
+      <button class="pill primary" id="linkBtn" type="button">Link a CSV file</button>
+      <button class="pill" id="unlinkBtn" type="button" hidden>Unlink</button>
+    </div>
+
+    <p class="data-label">Export now</p>
+    <div class="row-actions">
+      <button class="pill" id="csvBtn" type="button">Download CSV</button>
+      <button class="pill" id="xlsBtn" type="button">Download Excel</button>
+      <button class="pill" id="copyBtn" type="button">Copy</button>
+    </div>
+
+    <p class="data-label">Preview</p>
+    <textarea class="data" id="csvBox" readonly></textarea>
+
+    <div class="row-actions">
+      <button class="pill danger" id="clearBtn" type="button">Clear all data</button>
+      <button class="pill" id="closeBtn" type="button">Close</button>
+    </div>
+
+    <p class="hint">
+      Every response is stored in this browser (localStorage) with date &amp; time. Link a CSV file
+      above (Chrome or Edge) to also write each response straight to a spreadsheet file on disk, or
+      use the export buttons whenever you need them. Open this panel with the <strong>R</strong> key,
+      5 quick taps in the bottom-left corner, or <strong>?results</strong> in the URL.
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var KEY = "pumpgo_responses_v1";
+  var RATINGS = ["sad","neutral","happy"];
+  var LABELS = {sad:"Not great", neutral:"Okay", happy:"Great"};
+  var BOM = String.fromCharCode(0xFEFF); /* helps Excel open UTF-8 correctly */
+
+  /* starburst polygon */
+  (function(){
+    var pts=[], N=22, cx=50, cy=50, rO=50, rI=38;
+    for(var i=0;i<N*2;i++){
+      var r = i%2 ? rI : rO;
+      var a = (Math.PI*i)/N - Math.PI/2;
+      pts.push((cx+r*Math.cos(a)).toFixed(1)+","+(cy+r*Math.sin(a)).toFixed(1));
+    }
+    var el=document.getElementById("burstPoly");
+    if(el) el.setAttribute("points", pts.join(" "));
+  })();
+
+  function load(){
+    try{ var v=JSON.parse(localStorage.getItem(KEY)); return Array.isArray(v)?v:[]; }
+    catch(e){ return []; }
+  }
+  function save(list){
+    try{ localStorage.setItem(KEY, JSON.stringify(list)); }catch(e){}
+  }
+
+  var screenQ = document.getElementById("screen-q");
+  var screenThanks = document.getElementById("screen-thanks");
+  var thanksHead = document.getElementById("thanksHead");
+  var thanksSub = document.getElementById("thanksSub");
+  var resetTimer = null;
+
+  var THANKS = {
+    sad:   {h:"Sorry it<br>fell flat.", s:"We&rsquo;ll look into it."},
+    neutral:{h:"Thanks for<br>the feedback!", s:"We&rsquo;ll keep tuning."},
+    happy: {h:"Awesome &mdash;<br>ride safe!", s:"See you next time."}
+  };
+
+  function toThanks(rating){
+    var t = THANKS[rating] || THANKS.neutral;
+    thanksHead.innerHTML = t.h;
+    thanksSub.innerHTML = t.s;
+    screenQ.hidden = true;
+    screenThanks.hidden = false;
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(reset, 3800);
+  }
+
+  function reset(){
+    clearTimeout(resetTimer);
+    screenThanks.hidden = true;
+    screenQ.hidden = false;
+    var btns = screenQ.querySelectorAll(".face-btn");
+    for(var i=0;i<btns.length;i++){ btns[i].classList.remove("chosen","dim"); }
+  }
+
+  function record(rating){
+    if(RATINGS.indexOf(rating) === -1) return;
+    var list = load();
+    list.push({r:rating, t:new Date().toISOString()});
+    save(list);
+    writeToFile();
+  }
+
+  var faceBtns = document.querySelectorAll(".face-btn");
+  Array.prototype.forEach.call(faceBtns, function(btn){
+    btn.addEventListener("click", function(){
+      var rating = btn.getAttribute("data-rating");
+      Array.prototype.forEach.call(faceBtns, function(b){
+        b.classList.add(b === btn ? "chosen" : "dim");
+      });
+      record(rating);
+      setTimeout(function(){ toThanks(rating); }, 260);
+    });
+  });
+
+  document.getElementById("againBtn").addEventListener("click", reset);
+
+  document.addEventListener("keydown", function(e){
+    if(e.target && /^(TEXTAREA|INPUT)$/.test(e.target.tagName)) return;
+    var k = e.key.toLowerCase();
+    if(k === "1" && !screenQ.hidden) faceBtns[0].click();
+    else if(k === "2" && !screenQ.hidden) faceBtns[1].click();
+    else if(k === "3" && !screenQ.hidden) faceBtns[2].click();
+    else if(k === "r") toggleResults();
+    else if(k === "escape") closeResults();
+  });
+
+  /* ---------- data formatting ---------- */
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function fmtParts(iso){
+    var d = new Date(iso);
+    return {
+      date: d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()),
+      time: pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds())
+    };
+  }
+  function csvCell(v){
+    v = String(v);
+    return /[",\r\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  }
+  function buildCSV(list){
+    var rows = [["Rating", "Label", "Date", "Time", "Timestamp"]];
+    list.forEach(function(x){
+      var p = fmtParts(x.t);
+      rows.push([x.r, LABELS[x.r] || "", p.date, p.time, x.t]);
+    });
+    return rows.map(function(r){ return r.map(csvCell).join(","); }).join("\r\n");
+  }
+  function buildXLS(list){
+    var esc = function(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+    var head = "<tr><th>Rating</th><th>Label</th><th>Date</th><th>Time</th><th>Timestamp</th></tr>";
+    var body = list.map(function(x){
+      var p = fmtParts(x.t);
+      return "<tr><td>" + esc(x.r) + "</td><td>" + esc(LABELS[x.r] || "") + "</td><td>" +
+             p.date + "</td><td>" + p.time + "</td><td>" + esc(x.t) + "</td></tr>";
+    }).join("");
+    return '<html xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="utf-8">' +
+      '<!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>' +
+      '<x:Name>Feedback</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>' +
+      '</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->' +
+      '</head><body><table border="1">' + head + body + '</table></body></html>';
+  }
+  function today(){ return fmtParts(new Date().toISOString()).date; }
+  function downloadBlob(name, content, mime){
+    try{
+      var url = URL.createObjectURL(new Blob([content], {type: mime}));
+      var a = document.createElement("a");
+      a.href = url; a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+      return true;
+    }catch(e){ return false; }
+  }
+
+  /* ---------- optional: linked spreadsheet file (Chrome / Edge) ---------- */
+  var HANDLE_KEY = "csvHandle";
+  var fileHandle = null;
+  var handleNeedsPermission = false;
+  var fsSupported = (typeof window.showSaveFilePicker === "function");
+
+  function idb(){
+    return new Promise(function(res, rej){
+      var r = indexedDB.open("pumpgo", 1);
+      r.onupgradeneeded = function(){ r.result.createObjectStore("kv"); };
+      r.onsuccess = function(){ res(r.result); };
+      r.onerror = function(){ rej(r.error); };
+    });
+  }
+  function idbSet(k, v){
+    return idb().then(function(db){
+      return new Promise(function(res, rej){
+        var tx = db.transaction("kv", "readwrite");
+        tx.objectStore("kv").put(v, k);
+        tx.oncomplete = function(){ res(); };
+        tx.onerror = function(){ rej(tx.error); };
+      });
+    });
+  }
+  function idbGet(k){
+    return idb().then(function(db){
+      return new Promise(function(res, rej){
+        var tx = db.transaction("kv", "readonly");
+        var rq = tx.objectStore("kv").get(k);
+        rq.onsuccess = function(){ res(rq.result); };
+        rq.onerror = function(){ rej(rq.error); };
+      });
+    });
+  }
+
+  var fsStatus = document.getElementById("fsStatus");
+  var linkBtn = document.getElementById("linkBtn");
+  var unlinkBtn = document.getElementById("unlinkBtn");
+
+  function setFsStatus(msg, linked){
+    fsStatus.textContent = msg;
+    unlinkBtn.hidden = !linked;
+    linkBtn.textContent = linked ? "Change file" : (handleNeedsPermission ? "Reconnect file" : "Link a CSV file");
+  }
+
+  function writeToFile(){
+    if(!fileHandle || handleNeedsPermission) return Promise.resolve(false);
+    return fileHandle.createWritable().then(function(w){
+      return w.write(BOM + buildCSV(load())).then(function(){ return w.close(); });
+    }).then(function(){ return true; }).catch(function(){ return false; });
+  }
+
+  if(!fsSupported){
+    linkBtn.style.display = "none";
+    unlinkBtn.style.display = "none";
+    setFsStatus("Auto-save to a file needs Chrome or Edge. Use the export buttons below.", false);
+  } else {
+    linkBtn.addEventListener("click", function(){
+      var chain;
+      if(handleNeedsPermission && fileHandle && fileHandle.requestPermission){
+        chain = fileHandle.requestPermission({mode: "readwrite"}).then(function(p){
+          if(p !== "granted") throw new Error("denied");
+          handleNeedsPermission = false;
+          return true;
+        });
+      } else {
+        chain = window.showSaveFilePicker({
+          suggestedName: "pumpgo-feedback.csv",
+          types: [{description: "CSV file", accept: {"text/csv": [".csv"]}}]
+        }).then(function(h){
+          fileHandle = h;
+          handleNeedsPermission = false;
+          return idbSet(HANDLE_KEY, h).then(function(){ return true; });
+        });
+      }
+      chain.then(function(){ return writeToFile(); }).then(function(ok){
+        setFsStatus(ok
+          ? "Linked — every response is written to the file automatically."
+          : "Linked, but the last write failed. Click the button and try again.", true);
+      }).catch(function(){ /* user cancelled the picker */ });
+    });
+
+    unlinkBtn.addEventListener("click", function(){
+      fileHandle = null;
+      handleNeedsPermission = false;
+      idbSet(HANDLE_KEY, null).catch(function(){});
+      setFsStatus("Not linked — responses are kept in this browser only.", false);
+    });
+
+    idbGet(HANDLE_KEY).then(function(h){
+      if(!h){ setFsStatus("Not linked — responses are kept in this browser only.", false); return; }
+      fileHandle = h;
+      if(!h.queryPermission){ return; }
+      h.queryPermission({mode: "readwrite"}).then(function(p){
+        if(p === "granted"){
+          setFsStatus("Linked — every response is written to the file automatically.", true);
+        } else {
+          handleNeedsPermission = true;
+          setFsStatus("A file was linked earlier. Click “Reconnect file” to resume auto-save.", false);
+        }
+      });
+    }).catch(function(){});
+  }
+
+  /* ---------- results ---------- */
+  var results = document.getElementById("results");
+  function renderResults(){
+    var list = load();
+    var counts = {sad:0, neutral:0, happy:0};
+    list.forEach(function(x){ if(counts[x.r] != null) counts[x.r]++; });
+    var total = list.length;
+    function pct(n){ return total ? Math.round(n/total*100) : 0; }
+
+    document.getElementById("fillSad").style.width = pct(counts.sad)+"%";
+    document.getElementById("fillNeutral").style.width = pct(counts.neutral)+"%";
+    document.getElementById("fillHappy").style.width = pct(counts.happy)+"%";
+    document.getElementById("valSad").textContent = counts.sad+" · "+pct(counts.sad)+"%";
+    document.getElementById("valNeutral").textContent = counts.neutral+" · "+pct(counts.neutral)+"%";
+    document.getElementById("valHappy").textContent = counts.happy+" · "+pct(counts.happy)+"%";
+    document.getElementById("totalLine").textContent = total + (total===1?" response":" responses");
+
+    var meta = document.getElementById("resultsMeta");
+    if(total){
+      var first = new Date(list[0].t), last = new Date(list[total-1].t);
+      var f = function(d){ return d.toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"}); };
+      meta.textContent = "From " + f(first) + " to " + f(last);
+    } else {
+      meta.textContent = "No responses yet";
+    }
+
+    document.getElementById("csvBox").value = buildCSV(list);
+  }
+
+  function openResults(){ renderResults(); results.classList.add("open"); }
+  function closeResults(){ results.classList.remove("open"); }
+  function toggleResults(){ results.classList.contains("open") ? closeResults() : openResults(); }
+
+  document.getElementById("closeBtn").addEventListener("click", closeResults);
+
+  document.getElementById("csvBtn").addEventListener("click", function(){
+    var ok = downloadBlob("pumpgo-feedback-" + today() + ".csv", BOM + buildCSV(load()), "text/csv;charset=utf-8");
+    flash(this, ok ? "Downloaded" : "Blocked — use Copy");
+  });
+
+  document.getElementById("xlsBtn").addEventListener("click", function(){
+    var ok = downloadBlob("pumpgo-feedback-" + today() + ".xls", buildXLS(load()), "application/vnd.ms-excel");
+    flash(this, ok ? "Downloaded" : "Blocked — use Copy");
+  });
+
+  document.getElementById("copyBtn").addEventListener("click", function(){
+    var box = document.getElementById("csvBox");
+    var btn = this;
+    box.focus(); box.select();
+    var ok = false;
+    try{ ok = document.execCommand("copy"); }catch(e){}
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(box.value).then(function(){ flash(btn, "Copied!"); }).catch(function(){});
+    }
+    flash(btn, ok ? "Copied!" : "Press Ctrl+C");
+  });
+
+  var clearArmed = false, clearTimerId = null;
+  document.getElementById("clearBtn").addEventListener("click", function(){
+    var b = document.getElementById("clearBtn");
+    if(!clearArmed){
+      clearArmed = true;
+      b.textContent = "Tap again to confirm";
+      clearTimerId = setTimeout(function(){ clearArmed=false; b.textContent="Clear all data"; }, 4000);
+      return;
+    }
+    clearTimeout(clearTimerId);
+    clearArmed = false;
+    b.textContent = "Clear all data";
+    save([]);
+    renderResults();
+    flash(b, "Cleared");
+  });
+
+  function flash(el, msg){
+    var prev = el.textContent;
+    el.textContent = msg;
+    setTimeout(function(){ el.textContent = prev; }, 1400);
+  }
+
+  /* corner 5-tap */
+  var taps = 0, tapTimer = null;
+  document.getElementById("adminDot").addEventListener("click", function(){
+    taps++;
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(function(){ taps = 0; }, 2500);
+    if(taps >= 5){ taps = 0; openResults(); }
+  });
+
+  if(/[?&#]results/i.test(location.href)) openResults();
+})();
+</script>
+</body>
+</html>

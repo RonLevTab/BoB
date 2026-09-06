@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pump &amp; Go Lean Canvas</title>
+<style>
+  :root{
+    --orange:#C74A1E;
+    --orange-deep:#A93C15;
+    --cream:#F2E9D6;
+    --cream-dim:#E4D8BF;
+    --purple:#A796F2;
+    --ink:#7A2B0E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--orange);
+    color:var(--cream);
+    font-family:"Poppins","Century Gothic","Futura","Trebuchet MS",system-ui,sans-serif;
+    padding:28px 32px 34px;
+  }
+
+  /* ---- header ---- */
+  .top{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    gap:24px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(34px,5.2vw,68px);
+    line-height:.86;letter-spacing:-.02em;
+    font-weight:800;margin:0;color:var(--cream);
+    text-transform:uppercase;
+  }
+  .tagline{
+    margin:8px 0 0;font-size:clamp(11px,1.25vw,16px);
+    font-weight:700;letter-spacing:.02em;color:var(--purple);
+    text-transform:uppercase;
+  }
+  .brand{
+    font-weight:800;font-size:clamp(14px,1.8vw,24px);line-height:.95;
+    color:var(--cream);text-align:right;white-space:nowrap;
+    text-transform:uppercase;
+  }
+  .brand span{color:var(--purple);}
+
+  /* ---- grid ---- */
+  .canvas{
+    display:grid;
+    grid-template-columns:repeat(10,1fr);
+    grid-auto-rows:auto;
+    gap:7px;
+    border:3px solid var(--cream);
+    border-radius:24px;
+    background:var(--cream);
+    padding:7px;
+  }
+  .box{
+    background:var(--orange);
+    padding:13px 15px 15px;
+    border-radius:14px;
+    position:relative;
+    min-height:0;
+  }
+  .box.pale{background:var(--purple);color:var(--ink);}
+  .box.pale h2{color:var(--ink);}
+  .box.pale .num{color:var(--orange);}
+  .box.pale li::marker{color:var(--orange);}
+
+  h2{
+    font-size:clamp(9px,1.05vw,14px);
+    letter-spacing:.06em;text-transform:uppercase;
+    margin:0 0 7px;font-weight:800;color:var(--cream);
+    padding-right:22px;
+  }
+  .num{
+    position:absolute;top:9px;right:12px;
+    font-size:clamp(13px,1.5vw,20px);font-weight:800;
+    color:var(--purple);line-height:1;
+  }
+  ul{margin:0;padding-left:15px;}
+  li{
+    font-size:clamp(8.5px,.95vw,13px);
+    line-height:1.35;margin-bottom:5px;
+  }
+  li:last-child{margin-bottom:0;}
+  p.lead{
+    font-size:clamp(9.5px,1.1vw,15px);
+    line-height:1.35;margin:0 0 8px;font-weight:700;
+  }
+  p.small{
+    font-size:clamp(8px,.9vw,12px);
+    line-height:1.35;margin:0;
+  }
+  .sub{
+    margin-top:10px;padding-top:9px;
+    border-top:2px solid rgba(242,233,214,.45);
+  }
+  .pale .sub{border-top-color:rgba(122,43,14,.35);}
+  .sub h3{
+    font-size:clamp(8px,.9vw,12px);
+    letter-spacing:.06em;text-transform:uppercase;
+    margin:0 0 5px;font-weight:800;
+  }
+  b{font-weight:800;}
+
+  /* ---- placement ---- */
+  .problem       {grid-column:1 / span 2;}
+  .solution      {grid-column:3 / span 2;}
+  .uvp           {grid-column:5 / span 2;grid-row:1 / span 2;display:flex;flex-direction:column;}
+  .advantage     {grid-column:7 / span 2;}
+  .segments      {grid-column:9 / span 2;}
+  .alternatives  {grid-column:1 / span 2;}
+  .metrics       {grid-column:3 / span 2;}
+  .channels      {grid-column:7 / span 2;}
+  .adopters      {grid-column:9 / span 2;}
+  .costs         {grid-column:1 / span 5;}
+  .revenue       {grid-column:6 / span 5;}
+
+  .uvp .concept{margin-top:auto;}
+  .uvp .quote{
+    font-size:clamp(12px,1.45vw,21px);
+    line-height:1.15;font-weight:800;margin:0 0 10px;
+    color:var(--cream);
+  }
+
+  /* ---- footer ---- */
+  .foot{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:16px;margin-top:14px;padding-top:10px;
+    border-top:2px solid var(--purple);
+    font-size:clamp(8px,.9vw,12px);letter-spacing:.02em;
+  }
+
+  @media (max-width:860px){
+    body{padding:20px;}
+    .canvas{grid-template-columns:repeat(2,1fr);}
+    .problem,.solution,.uvp,.advantage,.segments,
+    .alternatives,.metrics,.channels,.adopters,
+    .costs,.revenue{grid-column:auto / span 2;grid-row:auto;}
+  }
+  @media print{
+    @page{size:A4 landscape;margin:8mm;}
+    body{padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <div>
+      <h1>Lean Canvas</h1>
+      <p class="tagline">Your bike tire always at the right pressure</p>
+    </div>
+    <div class="brand">Pump &amp;<br><span>Go</span></div>
+  </div>
+
+  <div class="canvas">
+
+    <!-- 2 PROBLEM -->
+    <section class="box problem">
+      <span class="num">2</span>
+      <h2>Problem</h2>
+      <ul>
+        <li>Soft or flat tires leave students stuck on the way to class</li>
+        <li>No pump and no help nearby on campus</li>
+        <li>Guesswork: students don't know the right pressure or how to check it</li>
+      </ul>
+    </section>
+
+    <!-- 4 SOLUTION -->
+    <section class="box solution">
+      <span class="num">4</span>
+      <h2>Solution</h2>
+      <ul>
+        <li>Staffed pump point at fixed campus spots, Tue &amp; Wed 14:00–16:00</li>
+        <li>Automatic and manual pump, pressure checked for you</li>
+        <li>Guidance included: we show you how, so you can do it yourself next time</li>
+        <li>Back on your bike in under a minute</li>
+      </ul>
+    </section>
+
+    <!-- 5 UVP + high-level concept -->
+    <section class="box pale uvp">
+      <span class="num">5</span>
+      <h2>Unique value proposition</h2>
+      <p class="quote">A flat tire shouldn't cost a student their day.</p>
+      <p class="small">The right tire pressure, on your route to class, in under a minute, for the price of a coffee. No appointment, no repair shop, no guessing.</p>
+      <div class="sub concept">
+        <h3>High-level concept</h3>
+        <p class="small">A pit stop for student bikes.</p>
+      </div>
+    </section>
+
+    <!-- 9 UNFAIR ADVANTAGE -->
+    <section class="box advantage">
+      <span class="num">9</span>
+      <h2>Unfair advantage</h2>
+      <ul>
+        <li>We're physically there at the moment the problem is felt, on the campus cycle route</li>
+        <li>Students helping students: peer trust an app or vending machine can't buy</li>
+        <li>Access to the BUAS campus and its bike flow</li>
+        <li>Pilot data on real demand, timing and service speed</li>
+      </ul>
+    </section>
+
+    <!-- 1 CUSTOMER SEGMENTS -->
+    <section class="box segments">
+      <span class="num">1</span>
+      <h2>Customer segments</h2>
+      <ul>
+        <li>BUAS students who cycle to campus daily (94% of Dutch students cycle)</li>
+        <li>30,000+ students in Breda citywide</li>
+        <li>Staff and visitors passing the stand</li>
+      </ul>
+    </section>
+
+    <!-- EXISTING ALTERNATIVES -->
+    <section class="box alternatives">
+      <h2>Existing alternatives</h2>
+      <ul>
+        <li>Bike shop repair: costs money, opening hours, detour</li>
+        <li>Borrowing a pump from a housemate or friend</li>
+        <li>Gas station air pump, off the daily route</li>
+        <li>Swapfiets subscription service</li>
+        <li>Doing nothing and riding on soft tires</li>
+      </ul>
+    </section>
+
+    <!-- 7 KEY METRICS -->
+    <section class="box metrics">
+      <span class="num">7</span>
+      <h2>Key metrics</h2>
+      <ul>
+        <li>Uses per pump per day. 2.23 is the break-even driver of the whole model</li>
+        <li>Pump sessions per hour. Target 10 · pilot 1: 10.6 · pilot 2: 13</li>
+        <li>Service time per tire. Target 50s · pilot: 45.2s</li>
+        <li>People reached per pilot. Target 25 · pilot 1: 16 · pilot 2: 26</li>
+        <li>Satisfaction taps on the kiosk (happy / okay / sad)</li>
+        <li>Returning customers per session</li>
+      </ul>
+    </section>
+
+    <!-- 6 CHANNELS -->
+    <section class="box channels">
+      <span class="num">6</span>
+      <h2>Channels</h2>
+      <ul>
+        <li>Physical stand on the busiest campus bike route</li>
+        <li>Flyers and QR posters at the bike racks</li>
+        <li>Word of mouth between students</li>
+        <li>Instagram @pumpandgo</li>
+        <li>Music and orange branding to pull people in</li>
+      </ul>
+    </section>
+
+    <!-- EARLY ADOPTERS -->
+    <section class="box adopters">
+      <h2>Early adopters</h2>
+      <ul>
+        <li>First-years and internationals new to Breda (6,000 arrivals this year)</li>
+        <li>Own no pump, no tools, no repair kit</li>
+        <li>Second-hand bike, unsure how to maintain it</li>
+        <li>Cycle to campus every day and can't afford to be late</li>
+      </ul>
+    </section>
+
+    <!-- 8 COST STRUCTURE -->
+    <section class="box pale costs">
+      <span class="num">8</span>
+      <h2>Cost structure</h2>
+      <ul>
+        <li><b>Startup, 10 stations:</b> €20,500 cheap hardware to €29,500 premium. Itemised: pump unit €1,600, housing and mounting €300, installation €400, monitoring hardware €400 per station</li>
+        <li><b>Running, per year:</b> €3,150 base case. Preventive maintenance €2,000, breakdowns €150, monitoring data and platform €900, insurance and spares €200. Rises to €4,150 if vandalism and faults run high</li>
+        <li><b>Pilot phase:</b> team hours, transport of equipment, flyers and printing, payment fees on QR/Tikkie</li>
+      </ul>
+    </section>
+
+    <!-- 3 REVENUE STREAMS -->
+    <section class="box pale revenue">
+      <span class="num">3</span>
+      <h2>Revenue streams</h2>
+      <ul>
+        <li><b>Pay per use:</b> €1 per pump session. 71% of surveyed students said they would pay, most naming €0.50–2</li>
+        <li><b>Modelled:</b> 2.23 uses per pump per day across 10 stations gives €8,140 revenue and €4,990 cashflow per year, paying back the build in roughly 4 years</li>
+        <li><b>Sensitivity:</b> at 3 uses per day payback drops to 2.6 years, at 2 uses on premium hardware it stretches to 7.1 years</li>
+        <li><b>Later:</b> punch card or semester pass, sponsorship or a paid spot from the university or a bike brand</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="foot">
+    <span>info@pumpandgo.nl</span>
+    <span>www.pumpandgo.nl</span>
+    <span>@pumpandgo</span>
+    <span>Group 7 · 4 September 2026</span>
+  </div>
+
+</body>
+</html>
