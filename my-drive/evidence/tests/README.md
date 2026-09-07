@@ -111,6 +111,27 @@ mine; this table is only what the tests actually say.
    "acts hard"; this one says the conviction that acting changes the outcome is only ordinary.
    Either a measurement artefact or the most interesting sentence in the whole write-up.
 
+
+### mba.com result page - what is recoverable, 7 Sep 2026
+
+My own result page is gone and there is no way to recover it without retaking the quiz:
+the quiz is not hosted on mba.com at all, it runs on **gmac.outgrow.us**
+(https://gmac.outgrow.us/which-entrepreneurial-mindset-do-you-have) and the result is
+rendered per session. Nothing persists under my name.
+
+- **If searching browser history, search `outgrow`, not `mba.com`.** Any result URL I still
+  have would sit on the outgrow.us domain.
+- **Permanent public description of the type** (this one does not rot):
+  https://www.mba.com/business-school-and-careers/why-business-school/entrepreneurial-mindset-quiz
+  It names the six mindsets - Stability seeker, Analytical strategist, Innovative
+  trailblazer, **Resilient learner**, Collaborative connector, Change catalyst - and
+  describes resilient learners as self-motivated team players with a growth mindset who
+  place high importance on feedback, and who accept that businesses are, in their words,
+  "built one step at a time". That matches what I recorded on 7 Sep.
+- **Still to do:** retake the quiz and screenshot the result page before navigating away.
+  A second run that returns Resilient learner again is stronger evidence than the first
+  run was; a different result is honest material for the "what I do not recognise" part.
+
 ## Synthesis (goes on the vision board, ~150 words)
 
 1. **Where all three agree.** The trait that shows up in every result. This is a real
