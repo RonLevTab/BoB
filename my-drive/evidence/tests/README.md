@@ -9,7 +9,7 @@ not a label to hide behind - the reflection is in the synthesis in section 5.
 | # | Test | Result | Artefact in this folder | Hard evidence? |
 |---|------|--------|--------------------------|----------------|
 | 1 | 16personalities | **ENTJ-A** (Assertive Commander) | `16personalities.pdf` | yes |
-| 2 | mba.com mindset quiz | **two different results** - see section 2 | `mba-mindset.pdf` | yes, but contested |
+| 2 | mba.com mindset quiz | **Innovative Trailblazer** | `mba-mindset.pdf` | yes |
 | 3 | BDC potential | **180 / 200** (avg 166) | `bdc-potential.pdf` | yes |
 
 Rule I am holding myself to: a link is a pointer, not evidence. It can rot, an account can
@@ -73,23 +73,13 @@ The only trait near the middle is Intuitive/Observant at 64% - everything else i
 
 **Entrepreneurial mindset quiz** (~5 min)
 https://www.mba.com/business-school-and-careers/why-business-school/entrepreneurial-mindset-quiz
-Result: **contested - two runs gave two different types.** See "the discrepancy" below.
+Result: **Innovative Trailblazer**, 7 Sep 2026 22:52. An earlier run the same day returned
+a different type; run 2 is the one I stand behind - see the note on run 1 below.
 
 The quiz sorts you into one of six types: Stability seeker, Analytical strategist,
 **Innovative trailblazer**, **Resilient learner**, Collaborative connector, Change catalyst.
 
-### Run 1, 7 Sep 2026 - Resilient Learner
-
-Recorded from the result page at the time; that page was not saved and is now gone.
-Strengths named: perseverance, resilience, quick learner. The framing was that I build up
-steadily one step at a time and compound feedback, advice and past experience - explicitly
-"not flashy, not reinventing Microsoft" - and that I rebuild after pushback.
-
-mba.com's public description of the type: resilient learners are self-motivated team players
-with a growth mindset who place high importance on feedback, and who accept that businesses
-are, in their words, "built one step at a time".
-
-### Run 2, 7 Sep 2026 22:52 - Innovative Trailblazer
+### Run 2, 7 Sep 2026 22:52 - Innovative Trailblazer (the result I stand behind)
 
 Saved as **`mba-mindset.pdf`**. Strengths named: **creative thinking, risk-taking, agility.**
 
@@ -99,10 +89,22 @@ potentially risky investments, working with clients they have never heard of - a
 trying, and that organisational skills can be somewhat haphazard, while still doing due
 diligence before committing.
 
+### Run 1, earlier on 7 Sep 2026 - Resilient Learner (superseded)
+
+Kept for honesty, not used as evidence. Recorded from the result page at the time; that
+page was not saved and is now gone.
+Strengths named: perseverance, resilience, quick learner. The framing was that I build up
+steadily one step at a time and compound feedback, advice and past experience - explicitly
+"not flashy, not reinventing Microsoft" - and that I rebuild after pushback.
+
+mba.com's public description of the type: resilient learners are self-motivated team players
+with a growth mindset who place high importance on feedback, and who accept that businesses
+are, in their words, "built one step at a time".
+
 ### The discrepancy - and why it is useful
 
-Same quiz, same person, same day, two different types. That is not a problem to hide, it is
-a finding about the instrument:
+Same quiz, same person, same day, two different types, and I stand behind the second one.
+That is not a problem to hide, it is a finding about the instrument:
 
 - It puts a hard number on why this is the softest of the three sources. A test that returns
   two different answers within one day cannot carry an argument on its own.
@@ -113,16 +115,17 @@ a finding about the instrument:
   on the side of acting under uncertainty, which is where BDC puts me too
   (ambiguity tolerance 23/24, creativity 23/24) and where 16personalities does not.
 
-**Open question to settle before this goes in the portfolio:** which run reflects how I
-actually answered? If run 2 is the honest one, run 1 becomes a footnote about test
-reliability. If the answers drifted between runs, say so - that is a more interesting
-observation about self-report tests than either result is.
+**Settled, 7 Sep 2026:** run 2 is the honest one - it is how I actually answered. Run 1 is
+a footnote about test reliability, and that footnote is worth a sentence on the vision
+board: a self-report quiz that moves this far in one day tells you as much about the
+method as about me.
 
 ### Evidence note
 
-`mba-mindset.pdf` is **one page of a six-page printout** (the footer reads 2/6) and it has
-no text layer. It shows the Innovative Trailblazer card and its strengths line, which is the
-part that matters. The quiz itself is not hosted on mba.com - it runs on **gmac.outgrow.us**
+`mba-mindset.pdf` is page 2 of a six-page printout and has no text layer. The other five
+pages are website furniture - navigation and article body, no result content - so this one
+page is the complete evidence: the Innovative Trailblazer card, its description and its
+strengths line. The quiz itself is not hosted on mba.com - it runs on **gmac.outgrow.us**
 (https://gmac.outgrow.us/which-entrepreneurial-mindset-do-you-have) and renders per session,
 so run 1 cannot be recovered.
 
@@ -174,21 +177,21 @@ What the three sources do to each other, before any interpretation of mine.
 
 | Theme | 16personalities | mba.com | BDC | Verdict |
 |---|---|---|---|---|
-| Perseverance / drive | high self-motivation, results oriented | run 1: "Resilient Learner" | 16/16 and 19/20 | **agree** (mba.com run 1 only) |
-| Tolerance of ambiguity / risk | listed as a **weakness** | run 2: risk-taking, agility | **23/24**, well above avg | **2 against 1 - 16p is the outlier** |
-| Creativity | - | run 2: creative thinking | 23/24, above avg | agree |
+| Perseverance / drive | high self-motivation, results oriented | - (only in superseded run 1) | 16/16 and 19/20 | **16p + BDC agree** |
+| Tolerance of ambiguity / risk | listed as a **weakness** | **risk-taking, agility** | **23/24**, well above avg | **2 against 1 - 16p is the outlier** |
+| Creativity | - | **creative thinking** | 23/24, above avg | agree |
 | Control over people | "preference for control" | - | **14/20, below avg** | **direct contradiction** |
-| Working through others | reluctant to delegate, discomfort asking for support | run 1: team-player framing | low pull to mobilise people | **the weak spot** |
+| Working through others | reluctant to delegate, discomfort asking for support | - | low pull to mobilise people | **the weak spot** |
 | Self-direction | respects independence | - | self-sufficiency 13/16, above avg | consistent |
 
 Four things follow, and they are what the synthesis is built from:
 
 1. **The anchor.** Perseverance and drive to achieve. 16personalities and BDC both name it
-   and BDC scores it at the ceiling, so it survives even without mba.com - which matters,
-   because mba.com run 2 does not name it. Still the safest thing to build goal 1 on.
+   and BDC scores it at the ceiling, so it stands without mba.com - which matters, because
+   the run I stand behind does not name it. Still the safest thing to build goal 1 on.
 2. **Contradiction on ambiguity.** 16personalities calls it a weakness; BDC scores it near
-   the ceiling and mba.com run 2 names risk-taking and agility outright. Two sources against
-   one - 16personalities is the outlier here. Settle it against the Pump & Go pilot weeks.
+   the ceiling and mba.com names risk-taking and agility outright. Two sources against one -
+   16personalities is the outlier here. Settle it against the Pump & Go pilot weeks.
 3. **Contradiction on control.** Wanting control over *my own* work is not the same as
    wanting authority over *people*. Self-sufficiency above average plus power/control below
    average is a coherent reading; "preference for control" as a personality flaw is not.
@@ -232,8 +235,10 @@ The fourth point is what makes this reflective instead of a horoscope.
       loud in January. If someone else ran them, swap in a moment that is genuinely mine.
 - [ ] Nothing here leans on mba.com as proof on its own - deliberate, and now justified:
       it returned two different types in one day (section 2).
-- [ ] Decide which mba.com run reflects how I actually answered, and whether the
-      two-different-results finding is worth a sentence on the board. It probably is.
+- [ ] Consider adding mba.com's risk-taking/agility to the ambiguity sentence. It turns
+      that argument from 1-against-1 into 2-against-1, at a cost of about six words.
+- [ ] Consider one sentence on test reliability: the same quiz gave me two types in one
+      day. It shows I read the instrument critically instead of collecting labels.
 
 ### AI assistance (AI level 5 / AIAS)
 
