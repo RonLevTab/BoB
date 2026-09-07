@@ -40,9 +40,9 @@ https://www.16personalities.com/profiles/e7682bcff35d1 — page title reads
 "Ron Lev Tabuchov - Assertive Commander (ENTJ-A)", verified 7 Sep 2026.
 Shared result link (no name on it): https://www.16personalities.com/profiles/entj-a/x/lmrwdb47b
 
-Both still need a saved PDF/screenshot in this folder. A link is a pointer, not evidence:
-it can rot, the account can change, and the assessor in January should not have to be
-online to see the result.
+Saved as `16personalities.pdf` (6 pages, 7 Sep 2026). Note: it is a pure image capture -
+no text layer - so it is not searchable, but it is a faithful picture of the page. A link is a pointer, not evidence: it can rot, the
+account can change, and the assessor in January should not have to be online to see it.
 
 **Strengths named by the test**
 Career: clear communication · decisive action · efficient organiser · future focused · results oriented · proactive initiative.
