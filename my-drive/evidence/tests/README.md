@@ -16,9 +16,32 @@ folder. The result page itself is the evidence; a score with no page behind it i
 
 Fill in as they come.
 
-- **16personalities:** type = , dominant traits =
+- **16personalities:** **ENTJ-A (Commander)**, taken 7 Sep 2026.
+  Extraverted 81% · Intuitive 64% · Thinking 75% · Judging 81% · Assertive 82%.
+  Dominant: assertiveness, structure/planning, objectivity over social harmony.
+  Least pronounced axis: Intuitive/Observant (64%), the only trait near the middle.
 - **mba.com:** score = , strongest dimension = , weakest =
 - **BDC:** score = , strongest dimension = , weakest =
+
+### 16personalities full free report, 7 Sep 2026
+
+Permanent result link: https://www.16personalities.com/profiles/entj-a/x/lmrwdb47b
+(Also save a screenshot/PDF of this page — a link can rot before January.)
+
+**Strengths named by the test**
+Career: clear communication · decisive action · efficient organiser · future focused · results oriented · proactive initiative.
+Growth: seeks constructive feedback · high self-motivation · structured habits · objective self-analysis · purposeful learning · open to new experiences.
+Relationships: reliable commitment · direct honesty · encourages confidence · practical problem-solving · respects independence · energetic.
+
+**Weaknesses named by the test**
+Career: reluctant to delegate · overly critical · restless with routine · discomfort with ambiguity · underestimates emotional factors · intolerant of inefficiency.
+Growth: impatient with slow progress · avoids emotional reflection · overcommits · resists relaxation · unrealistically high standards · **discomfort asking for support**.
+Relationships: difficulty expressing emotions · insensitive criticism · impatient with vulnerability · tasks over connection · **preference for control** · overlooks small gestures.
+
+**Paywall note:** the "career ideas", "work styles", "what energizes/drains you" and
+"relationship" bonus blocks are €9 and are NOT in the page. What the browser receives is
+scrambled filler (anagrams of "your career path"), and it is re-scrambled differently on
+every page load — so there is nothing hidden to recover. Not needed for this assignment.
 
 ## Synthesis (goes on the vision board, ~150 words)
 
