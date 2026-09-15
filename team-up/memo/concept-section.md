@@ -4,11 +4,15 @@
 
 ---
 
-## Concept: a high-end guest-chef restaurant in Breda
+## Concept: Stage 52, a high-end guest-chef restaurant in Breda
 
-**The idea.** A high-end restaurant at one fixed location in Breda where the kitchen changes hands. Every week a new guest chef takes over with a short, limited menu. Each chef brings their own music and, if they want, the personal story behind the food. The venue, the service and the quality stay the same; the chef and the menu change.
+*52 chefs, 52 verhalen.*
 
-**How it works for the guest.** One ticket, one price, paid in advance: the guest chef's menu plus "pick your drink". Nobody has to work out a bill at the end of the night.
+**The name.** In professional kitchens a "stage" is a chef's guest shift in someone else's kitchen; for guests it is a stage where a chef performs. 52 stands for the 52 weeks of the year: 52 guest chefs, each with their own story (verhaal).
+
+**The idea.** Stage 52 is a high-end restaurant at one fixed location in Breda where the kitchen changes hands. Every week a new guest chef takes over with a short, limited menu. Each chef brings their own music and, if they want, the personal story behind the food. The venue, the service and the quality stay the same; the chef and the menu change.
+
+**How it works for the guest.** One ticket, one price, paid in advance: the guest chef's menu plus "pick your drink". Nobody has to work out a bill at the end of the night. The ticket price is set per guest chef, based on the chef's level, the dishes and the ingredients, so every week has its own price.
 
 ## Why this fits how people eat out now
 
@@ -31,7 +35,7 @@
 
 ## Price positioning
 
-In Breda, a ticketed dinner show starts at EUR 56 all-in (Big Brunch Club), a 4- to 8-course dinner at Uijttewaal costs EUR 82.50 to EUR 140, and Wolfslaar (1 Michelin star) averages about EUR 130 per person. Ticket price: **[to decide]**.
+In Breda, a ticketed dinner show starts at EUR 56 all-in (Big Brunch Club), a 4- to 8-course dinner at Uijttewaal costs EUR 82.50 to EUR 140, and Wolfslaar (1 Michelin star) averages about EUR 130 per person. The ticket price varies per guest chef, depending on the chef's level, the dishes and the ingredients. This range shows where those prices sit in Breda.
 
 ---
 

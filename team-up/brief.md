@@ -23,9 +23,9 @@ Come up with new business ideas around Breda and find a location for it.
 | 15 Sep 2026 | Concept: a high-end restaurant in Breda that hosts a rotating guest chef. The restaurant stays at one fixed location. |
 | 15 Sep 2026 | One ticket, one price, "pick your drink". |
 | 15 Sep 2026 | A new guest chef every week. |
+| 15 Sep 2026 | Ticket price varies per chef (level, dishes, ingredients). Breda benchmarks: EUR 56 to EUR 130 per person. |
+| 15 Sep 2026 | Name: **Stage 52**, tagline "52 chefs, 52 verhalen". Chosen from shortlist Verhaal / 52 / Stage. |
 | 15 Sep 2026 | Concept section leans on "eat out less often, spend more per visit, story-led concepts win". Municipal horeca policy is left out of the concept section for now. |
 
 ## Open decisions
-- Name of the restaurant
-- Ticket price (Breda benchmarks: EUR 56 to EUR 130 per person)
 - Location (Ron)
