@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="Arial, Helvetica, sans-serif">
+  <title>Breda positioning map: Stage 52</title>
+  <rect width="800" height="600" fill="#ffffff"/>
+  <text x="400" y="36" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">Positioning in Breda</text>
+
+  <!-- quadrant tint for the gap -->
+  <rect x="400" y="70" width="340" height="230" fill="#f4ede2"/>
+
+  <!-- axes -->
+  <line x1="60" y1="300" x2="740" y2="300" stroke="#555" stroke-width="2"/>
+  <line x1="400" y1="70" x2="400" y2="530" stroke="#555" stroke-width="2"/>
+  <polygon points="740,300 728,294 728,306" fill="#555"/>
+  <polygon points="60,300 72,294 72,306" fill="#555"/>
+  <polygon points="400,70 394,82 406,82" fill="#555"/>
+  <polygon points="400,530 394,518 406,518" fill="#555"/>
+
+  <!-- axis labels -->
+  <text x="400" y="60" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">HIGH-END</text>
+  <text x="400" y="552" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">CASUAL</text>
+  <text x="64" y="324" font-size="15" font-weight="bold" fill="#333">SAME CHEF</text>
+  <text x="736" y="324" text-anchor="end" font-size="15" font-weight="bold" fill="#333">NEW CHEF EVERY WEEK</text>
+
+  <!-- Breda competitors -->
+  <g font-size="14" fill="#333">
+    <circle cx="150" cy="110" r="8" fill="#8a8a8a"/><text x="164" y="115">Wolfslaar (1 Michelin star)</text>
+    <circle cx="200" cy="165" r="8" fill="#8a8a8a"/><text x="214" y="170">Uijttewaal</text>
+    <circle cx="120" cy="215" r="8" fill="#8a8a8a"/><text x="134" y="220">Chocolat</text>
+    <circle cx="270" cy="250" r="8" fill="#8a8a8a"/><text x="284" y="255">Kej Caban</text>
+    <circle cx="200" cy="380" r="8" fill="#8a8a8a"/><text x="214" y="385">Chef's! Food &amp; Drinks</text>
+    <circle cx="250" cy="470" r="8" fill="#8a8a8a"/><text x="264" y="475">Foodhall Breda</text>
+    <circle cx="480" cy="440" r="8" fill="#8a8a8a"/><text x="494" y="438">Big Brunch Club shows</text>
+    <text x="494" y="455" font-size="12" fill="#666">(show changes, kitchen stays)</text>
+  </g>
+
+  <!-- Stage 52 -->
+  <circle cx="600" cy="140" r="16" fill="#b5462a"/>
+  <text x="600" y="186" text-anchor="middle" font-size="20" font-weight="bold" fill="#b5462a">Stage 52</text>
+  <text x="600" y="206" text-anchor="middle" font-size="13" fill="#7a3a26">high-end, new guest chef every week</text>
+
+  <text x="400" y="585" text-anchor="middle" font-size="12" fill="#666">Placement: team judgement based on desk research, Sep 2026. Grey = existing Breda concepts.</text>
+</svg>
