@@ -35,7 +35,7 @@ Our desk research found **no restaurant in Breda where a different chef takes ov
 
 ![Breda positioning map](positioning-map.svg)
 
-Breda's high-end restaurants all work with their own chef, and the places where the offer changes (the food hall, the ticketed shows) are casual. **Stage 52 is the only concept in the top-right corner: high-end, with a new chef every week.** Placement is our own judgement based on the desk research above.
+Breda's high-end restaurants all work with their own chef. The casual places with variety (the food hall's 14 stalls, the changing ticketed shows) also keep the same kitchen. **Stage 52 is the only concept in the top-right corner: high-end, with a new chef every week.** Placement is our own judgement based on the desk research above.
 
 ### Target group
 

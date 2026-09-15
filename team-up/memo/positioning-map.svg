@@ -27,9 +27,9 @@
     <circle cx="120" cy="215" r="8" fill="#8a8a8a"/><text x="134" y="220">Chocolat</text>
     <circle cx="270" cy="250" r="8" fill="#8a8a8a"/><text x="284" y="255">Kej Caban</text>
     <circle cx="200" cy="380" r="8" fill="#8a8a8a"/><text x="214" y="385">Chef's! Food &amp; Drinks</text>
-    <circle cx="250" cy="470" r="8" fill="#8a8a8a"/><text x="264" y="475">Foodhall Breda</text>
-    <circle cx="480" cy="440" r="8" fill="#8a8a8a"/><text x="494" y="438">Big Brunch Club shows</text>
-    <text x="494" y="455" font-size="12" fill="#666">(show changes, kitchen stays)</text>
+    <circle cx="250" cy="500" r="8" fill="#8a8a8a"/><text x="264" y="505">Foodhall Breda</text>
+    <circle cx="90" cy="435" r="8" fill="#8a8a8a"/><text x="104" y="433">Big Brunch Club shows</text>
+    <text x="104" y="450" font-size="12" fill="#666">(show changes, kitchen stays)</text>
   </g>
 
   <!-- Stage 52 -->
